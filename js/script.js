@@ -1,10 +1,22 @@
-console.log("Witam serdecznie wszystkich developerów, którzy tutaj zaglądają! 🤩");
+{
+  const welcome = () => {
+    console.log("Witam serdecznie wszystkich developerów, którzy tutaj zaglądają! 🤩");
+  }
 
-let changeBackgroundButton = document.querySelector(".js-changeBackgroundButton");
-let body = document.documentElement;
-let nextColorName = document.querySelector(".js-nextColorName")
+  const toggleBackground = () => {
+    const body = document.documentElement;
+    const nextColorName = document.querySelector(".js-nextColorName")
 
-changeBackgroundButton.addEventListener("click", () => {
-  body.classList.toggle("body--grey");
-  nextColorName.innerText = body.classList.contains("body--grey") ? "białe" : "szare";
-});
+    body.classList.toggle("body--grey");
+    nextColorName.innerText = body.classList.contains("body--grey") ? "białe" : "szare";
+  };
+
+  const init = () => {
+    const changeBackgroundButton = document.querySelector(".js-changeBackgroundButton");
+    changeBackgroundButton.addEventListener("click", toggleBackground);
+
+    welcome();
+  };
+
+  init();
+}
